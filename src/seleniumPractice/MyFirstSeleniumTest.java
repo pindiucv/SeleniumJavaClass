@@ -9,9 +9,14 @@ public class MyFirstSeleniumTest {
 
     public static void main(String[] args) {
 
-      System.setProperty("webdriver.chrome.driver", "C:\\Users\\Veruncic\\JavaPractice\\drivers\\chromedriver.exe");
+        String root = System.getProperty("user.dir");
+
+       String chromeDriverPath =  root + "\\drivers\\chromedriver.exe";
+       System.setProperty("webdriver.chrome.driver", chromeDriverPath);
 
        ChromeDriver driver = new ChromeDriver();
+       driver.get("http://www.facebook.com");
+       driver.quit();
 
     }
 
